@@ -11,8 +11,9 @@ let flash = require('connect-flash');
 
 const{ObjectId} = require("mongodb") // works with id 
  
-const PORT = 8000
+const PORT = process.env.PORT || 3000;
 
+// makes option values 
 const makes = [
     "Subaru",
     "Porsche",
@@ -85,9 +86,6 @@ app.get("/addlog",(req,res)=>{
 // edit route for the edit form 
 app.get("/logs/:id/edit",async(req,res)=>{
     try{
-    if (!ObjectId.isValid(req.params.id)) {
-        return res.status(400).send("Invalid log ID")
-    }
     const log = await mongoose.connection.db.collection("CarCollection").findOne({_id:new ObjectId(req.params.id)}) // oen car document where the IRL matched the ID
 if(!log) return res.redirect("/")
     res.render("editlog.ejs",{log,makes}) // render the edit form (ejs uses both)

@@ -1,6 +1,11 @@
 # NightLog
 
-NightLog is a simple web app for keeping an overnight car log. Instead of passing around a handwritten sheet, attendants can record a vehicle, see the shift's entries, and correct or remove mistakes.
+NightLog is a  web app for keeping an overnight car log. Instead of passing around a handwritten sheet, attendants can record a vehicle, see the shift's entries, and correct or remove mistakes.
+
+
+## Demo
+
+![Night log demo showing for keeping an overnight car log](public/image/nightlog-readme-mockup.png)
 
 ## What it does
 
