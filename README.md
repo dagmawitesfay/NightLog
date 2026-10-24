@@ -54,7 +54,7 @@ Replace the MongoDB URI placeholders with your Atlas connection details. URL-enc
 ### Start the app
 
 ```sh
-node server.js
+npm start 
 ```
 
 Then visit [http://localhost:8000](http://localhost:8000).
