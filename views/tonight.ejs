@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Queue</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+     <script src="https://kit.fontawesome.com/75136afa19.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+   <header>
+        <h1>NightLog</h1>
+        <nav>
+        <ul>
+            <li><a href="/" >Tonight</a></li>
+            <li><a class="logBtn" href="/addlog" >Log a car</a></li>
+        </ul>
+        </nav>
+    </header>
+
+    <!--Table Container Section -->
+    <main>
+    <section class="text-container">
+    <div class="left-section">
+        <h2>Tonight</h2>
+        <p>Every car logged since the shift started,oldest first</p>
+        <input type="text" id="search" name="search" placeholder="Filter by plate">
+    </div>
+
+
+    </section>
+
+    <!-- Table Container -->
+    <section class="table-container">
+     <% if (logs.length > 0) { %>  
+    <table>
+        <tr>
+            <th>PLATE</th>
+            <th>LOGGED BY</th>
+            <th>MAKE</th>
+            <th>MODEL</th>
+            <th>COLOR</th>
+            <th>LOGGED AT</th>
+            <th>Actions</th>
+        </tr>
+
+            <!-- Convert the hours in 24 hour to am/pm 12 hour standard -->
+           <% 
+           const getHoursCacluation = (date) => {
+            const parsedDate = date instanceof Date ? date : new Date(date)
+            if (Number.isNaN(parsedDate.getTime())) return "Invalid date"
+            const hours = parsedDate.getHours()
+            const timeDestination = hours >= 12 ?  "pm" : "am" 
+            const hourIn12 = hours % 12 || 12 
+            return `${hourIn12} ${timeDestination} `
+           } %>
+
+        <% for(const log of logs){ %>
+         
+
+            <tr class="log-row">
+        <td><p class="plate"><%= log.plate %></p></td>
+        <td><%= log.name %></td>
+        <td><%= log.make %></td>
+        <td><%= log.model %></td>
+        <td><%= log.color %></td>
+        <td><%= getHoursCacluation(log.loggedAt) %></td>
+        <td class="btnWrapper">
+        <a href="/logs/<%= log._id %>/edit" class="btn edit">Edit</a>
+        <button type="button" class="btn delete" data-car-id="<%= log._id %>">Delete</button>
+        </td>
+        </tr>
+        
+        <%} %>
+        <% } %>
+    </table> 
+    </section>
+    </main>
+    <script src="/main.js"></script>
+</body>
+</html>

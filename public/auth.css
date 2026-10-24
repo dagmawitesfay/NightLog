@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f7f8f3;
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: space-around;
+  gap: 32px;
+  max-width: 1120px;
+  align-items: start;
+  padding: 40px;
+  margin: 0 auto;
+}
+form{ 
+  padding: 24px;
+  width: 340px;
+  border: 1px solid #e6e6e6;
+  border-radius: 16px;
+  background-color: white;
+}
+form h2 ,p{ 
+ text-align: center;
+}
+.field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #949494;
+  border-radius: 12px;
+  font: inherit;
+  font-size: 15px;
+  background: #fff;
+}
+
+.btn{
+  padding: 12px 24px;
+  background-color: #0a0a0a;
+  border: none;
+  color: white;
+  font-weight: 500;
+  border-radius: 999px;
+  cursor: pointer;
+  width: 100%;
+}
+.image-box{
+  border: 1px solid #949494; 
+  width: 350px;
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.image-box img{   
+  width: 140px;
+  height: 100px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+} 
+
+.image-box p { 
+  margin: 20px 0 0;
+  color: #6b6b6b;
+  line-height: 1.5;
+}
+
+.error-message{
+  padding: 12px 16px;
+  margin: 0 0 16px;
+  border: 1px solid #b42318;
+  border-radius: 8px;
+  background-color: #fef3f2;
+  color: #b42318;
+}
+
+.error-message p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}

@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Queue</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+     <script src="https://kit.fontawesome.com/75136afa19.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+   <% const makes = [
+  'Subaru',
+  'Porsche',
+  'Toyota',
+  'Honda',
+  'Ford',
+  'Hyundai',
+  'Tesla',
+  'Jeep',
+  'Nissan',
+  'Chevrolet',
+  'Kia',
+  'Mazda',
+  'Volkswagen',
+  'BMW',
+  'Other'
+];
+%>
+ <header>
+        <h1>NightLog</h1>
+        <nav>
+        <ul>
+            <li><a href="/" >Tonight</a></li>
+
+        </ul>
+        </nav>
+    </header>
+
+    <section class="form-container">
+      <form action="/addlog" method="post">
+        <h3>Log a car</h3>
+        <p>The time and your name are added automatically</p>
+
+        <!--loggedAt and loggedBy section -->
+        <section class="log-by-wrapper">
+        <div class="field">
+          <label for="time">Logged At</label>
+          <input type="datetime-local" name="loggedAt" id="loggedAt" required placeholder="12:52 Sat Oct 17"/>
+        </div>
+
+        <!-- Logged By -->
+         <div class="field">
+          <label for="name">Logged by </label>
+          <input type="text" name="name" id="name" required placeholder=" Marcus T " />
+        </div>
+         </section>
+
+
+        <!-- Logged By -->
+         <div class="field">
+          <label for="plate">Plate Number </label>
+          <input type="text" name="plate" id="plate" required placeholder=" dsd-23 " />
+        </div>
+
+
+        <!--Make and model section -->
+        <section class="make-model-section">
+        <div class="field">
+          <label for="make">Make </label>
+            <select name="make" id="make" required>
+            <option value="">Choose Car Model</option> 
+            <% for (const make of makes) { %>
+              <option value="<%= make %>"><%= make %></option>
+            <% } %>
+            </select>
+        </div>
+        
+        <!-- Model -->
+          <div class="field">
+          <label for="model">Model </label>
+          <input type="text" name="model" id="model" required placeholder=" Outback " />
+        </div>
+        </section>
+
+        <!-- Color  -->
+         <div class="field">
+          <label for="color">Color </label>
+          <input type="text" name="color" id="color" required placeholder=" Red , Blue " />
+        </div>
+         
+        
+
+            <!--Level  -->
+        <div class="field">
+          <label for="name">Level /spot(optional) </label>
+          <input type="text" name="level" id="level" required placeholder="P2.14"/>
+        </div>
+
+        <button type="submit">Save Entry</button>
+      </form>
+    </section>
+
+     <script src="/main.js"></script>
+</body>
+</html>

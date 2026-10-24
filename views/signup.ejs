@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <title>Question Queue</title>
+    <link rel="stylesheet" href="/auth.css">
+</head>
+<body>
+     <section class="login-wrapper">
+        <!-- LOGIN FORM -->
+          <form action="/signup" method="post">
+            <h2>Create your acccount </h2>
+            <% if (message && message.length) { %>
+              <div class="error-message">
+                 <p role="alert"><%= message[0] %></p>
+              </div>
+             
+            <% } %>
+
+            <!-- Email -->
+              <div class="field">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required placeholder="you@example.com"/>
+            </div>
+
+              <!-- Passowrd -->
+              <div class="field">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" required placeholder="Your Password"/>
+            </div>
+
+             <div class="btn-container">
+                <button class="btn">Create account</button>
+                <p>Already in? <a href="/login">Log in</a></p>
+              </div>
+
+          </form>
+            </section>
+
+
+</body>
+</html>
