@@ -5,7 +5,7 @@ NightLog is a  web app for keeping an overnight car log. Instead of passing arou
 
 ## Demo
 
-![Night log demo showing for keeping an overnight car log](public/image/nightlog-readme-mockup.png)
+![Night log demo showing for keeping an overnight car log](public/image/nightlog-mockup.png)
 
 ## What it does
 

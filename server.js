@@ -86,8 +86,8 @@ app.get("/addlog",(req,res)=>{
 // edit route for the edit form 
 app.get("/logs/:id/edit",async(req,res)=>{
     try{
-    const log = await mongoose.connection.db.collection("CarCollection").findOne({_id:new ObjectId(req.params.id)}) // oen car document where the IRL matched the ID
-if(!log) return res.redirect("/")
+    const log = await mongoose.connection.db.collection("CarCollection").findOne({_id:new ObjectId(req.params.id)}) // oen car document where the url matched the ID
+    if(!log) return res.redirect("/")
     res.render("editlog.ejs",{log,makes}) // render the edit form (ejs uses both)
 
     } catch(err){
