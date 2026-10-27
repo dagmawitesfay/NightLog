@@ -47,7 +47,7 @@ MONGODB_CONNECTIION=mongodb+srv://<username>:<password>@<cluster-url>/NightLog?r
 SESSION_SECRET=replace-with-a-long-random-secret
 ```
 
-Replace the MongoDB URI placeholders with your Atlas connection details. URL-encode any special characters in the username or password. Keep `.env` private; do not commit it or share the URI.
+Replace the MongoDB URI placeholders with your Atlas connection details. URL-encode any special characters in the username or password.
 
 > The application currently reads the MongoDB variable as `MONGODB_CONNECTIION` (with three consecutive “i” characters in `CONNECTIION`). Use that exact spelling in `.env` unless you also update `server.js`.
 
